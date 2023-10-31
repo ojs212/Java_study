@@ -17,7 +17,11 @@ public class Test3 {
 		int h = sc.nextInt();
 		sc.close();
 		int[][] matrix = new int[h][h];
-		int data = (h * h) + (h / 2);
+		int data = 0;
+		for(int i=1; i<=h; i++) {
+			data += i;
+		}
+		data += h/2;
 		for(int i=0; i<=matrix.length; i++) {
 			for(int j=i; j<matrix.length-i; j++) {
 				matrix[i][j] = data--;
