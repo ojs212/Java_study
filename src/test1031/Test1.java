@@ -35,6 +35,7 @@ public class Test1 {
 			Card.width = 50;
 			Card.height = 80;
 			System.out.println(list[i]);
+			aaaaaa
 		}
 
 	}
