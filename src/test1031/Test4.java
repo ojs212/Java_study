@@ -24,6 +24,9 @@ class Student {
 	float getAverage() {
 		return (float) (((float)kor + eng + math) / 3);
 	}
+	Student() {
+		
+	}
 }
 
 public class Test4 {
