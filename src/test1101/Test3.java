@@ -20,7 +20,7 @@ class Animal {
 		this("사람", age);
 	}
 	void info() {
-		System.out.println(name + ":" +age + "살");
+		System.out.println(name + ":" + age + "살");
 	}
 }
 

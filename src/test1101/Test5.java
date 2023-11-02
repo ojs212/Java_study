@@ -25,7 +25,8 @@ public class Test5 {
 		while(true) {
 			myCoin.flip();
 			yourCoin.flip();
-			System.out.println((myCoin.result ? "앞면" : "뒷면") + "\t" + (yourCoin.result ? "앞면" : "뒷면"));
+			System.out.println
+			((myCoin.result ? "앞면" : "뒷면") + "\t" + (yourCoin.result ? "앞면" : "뒷면"));
 			if (myCoin.result == true) {
 				mySum++;
 			} else if (myCoin.result == false) {

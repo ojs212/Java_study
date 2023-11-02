@@ -25,7 +25,8 @@ class Rectangle {
 		sno = ++cnt;
 	}
 	public String toString() {
-		return sno + "/" + cnt + " 사각형:(" + width + "," + height + ") 면적:" + area() + ", 둘레:" + length();
+		return sno + "/" + cnt + " 사각형:(" + width + "," + height + ") 면적:"
+		+ area() + ", 둘레:" + length();
 	}
 }
 public class Test1 {

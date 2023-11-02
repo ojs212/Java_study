@@ -29,10 +29,10 @@ class Circle {
 		this(3, 7, r);
 	}
 	void move(int a, int b) {
-		x +=a; y+=b;
+		x += a; y += b;
 	}
-	void scale(int a) {
-		 r = r * a;
+	void scale(double a) {
+		 r *= a;
 	}
 	double area() {
 		return r * r * Math.PI;
@@ -41,8 +41,7 @@ class Circle {
 		return 2 * r * Math.PI;
 	}
 	public String toString() {
-		return no + "번원 : 반지름:" + r + ", 좌표:(" + x + "," + y + "),"
-				+ " 넓이:" + area() + ", 둘레:" + length();
+		return String.format("%d번원 : 반지름:%d, 좌표:(%d,%d), 넓이:%.3f, 둘레:%.3f", no,r,x,y, area(), length());
 	}
 	
 	

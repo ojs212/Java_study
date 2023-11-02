@@ -27,7 +27,7 @@ package test1101;
 전체 뒷면 동전의 갯수 :7
  */
 class Coin {
-	int side, sno;
+	int side, cno;
 	static int cnt;
 	boolean result;
 	void flip() {
@@ -35,10 +35,10 @@ class Coin {
 		result = (side == 0 ? true : false);
 	}
 	Coin() {
-		sno = ++cnt;
+		cno = ++cnt;
 	}
 	public String toString() {
-		return sno + "번 동전 : " + (result? "앞면" : "뒷면");
+		return cno + "번 동전 : " + (result? "앞면" : "뒷면");
 	}
 }
 
