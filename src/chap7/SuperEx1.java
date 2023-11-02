@@ -22,7 +22,7 @@ class Child extends Parent {
 //		super(); // 부모클래스의 생성자에 맞지 않음
 	}
 	void method() {
-		int x = 30;
+//		int x = 30;
 		System.out.println("x=" + x);
 		System.out.println("this.x=" + this.x);
 		System.out.println("super.x=" + super.x);
