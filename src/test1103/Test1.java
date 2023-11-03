@@ -7,12 +7,12 @@ package test1103;
  *    멤버메서드 :
  *        void eat(); => 추상메서드
  *        void sound(); => 추상메서드
- * 2. Dog클래스  :  Animal 클래스의 자손클래스
+ * 2. Dog 클래스  :  Animal 클래스의 자손클래스
  *    생성자의 매개변수 없음.
  *    멤버메서드 :
  *        void eat() :  "주인이 주는대로 먹는다" 출력
  *        void sound(); "멍멍짖는다";
- * 3. Lion클래스  :  Animal 클래스의 자손클래스
+ * 3. Lion 클래스  :  Animal 클래스의 자손클래스
  *    생성자의 매개변수 없음.
  *    멤버메서드 :
  *        void eat() :  "초식동물을 잡아 먹는다" 출력

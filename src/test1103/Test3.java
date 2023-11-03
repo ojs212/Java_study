@@ -26,12 +26,12 @@ class SutdaDeck {
 	SutdaCard[] cards = new SutdaCard[20];
 	SutdaDeck() {
 		for(int i=0; i<cards.length; i++) {
-			if (i%10 > 1) {
-				cards[i] = new SutdaCard(i%10+1, false);
-			} else if (i+1 == 1 || i+1 == 3 || i+1 == 8) {
-				cards[i] = new SutdaCard(i+1, true);
+			if(i > 9) {
+				System.out.print(cards[i] = new SutdaCard((i % 10) + 1, false));
+			} else if(i == 0 || i == 2 || i == 7) {
+				System.out.print(cards[i] = new SutdaCard(i + 1, true));
 			} else {
-				cards[i] = new SutdaCard(i+1, false);
+				System.out.print(cards[i] = new SutdaCard(i + 1, false));
 			}
 		}
 		
@@ -51,5 +51,15 @@ public class Test3 {
 	public static void main(String[] args) {
 		SutdaDeck deck = new SutdaDeck();
 		System.out.println(deck);
+		SutdaCard tmp;
+		for(int i=0; i<1000; i++) {
+			int a = (int)(Math.random() * 20);
+			int b = (int)(Math.random() * 20);
+			tmp = deck.cards[a];
+			deck.cards[a] = deck.cards[b];
+			deck.cards[b] = tmp;
+		}
+		System.out.println(deck);
+		
 	}
 }
