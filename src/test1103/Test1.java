@@ -38,9 +38,11 @@ class Dog extends Animal {
 	Dog() {
 		super(4,"강아지");
 	}
+	@Override // 어노테이션
 	void eat() {
 		System.out.println("주인이 주는대로 먹는다");
 	}
+	@Override
 	void sound() {
 		System.out.println("멍멍짖는다");
 	}
@@ -49,9 +51,11 @@ class Lion extends Animal {
 	Lion() {
 		super(4,"사자");
 	}
+	@Override
 	void eat() {
 		System.out.println("초식동물을 잡아먹는다");
 	}
+	@Override
 	void sound() {
 		System.out.println("어흥거린다");
 	}

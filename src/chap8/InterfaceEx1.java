@@ -23,11 +23,95 @@ interface Printerable {
 	int INK = 100; // 상수 (public static final 생략)
 	void print(); // 추상메서드 (public abstract 생략)
 }
+interface Scannerable {
+	void scan();
+}
+interface Faxable {
+	String FAX_NO = "02-1111-2222";
+	void send(String no);
+	void receive(String no);
+}
+// 인터페이스간의 상속 : 다중상속 가능
+interface Complexerable extends Printerable, Scannerable, Faxable {}
+// 클래스간의 상속 : 단일상속
+// 클래스와 인터페이스간의 구현 : 다중 구현 가능
+class Complexer extends Object implements Complexerable {
+// 구현클래스
+// class Complexer extends Object implements Printerable, Scannerable, Faxable {
+	int ink; // 변수
+	Complexer() {
+		ink = INK;
+	}
+	@Override
+	public void print() { // 접근제어자는 같거나 넓은 범위만 가능
+		System.out.println("프린트 출력합니다. 남은 잉크량: " + --ink);
+	}
+	@Override
+	public void scan() {
+		System.out.println("이미지를 스캔합니다.");
+	}
+	@Override
+	public void send(String no) {
+		System.out.println(FAX_NO + " 에서 " + no + "로 FAX를 전송합니다.");
+	}
+	@Override
+	public void receive(String no) {
+		System.out.println(no + " 에서 " + FAX_NO + "로 FAX를 받았습니다.");
+	}
+}
 public class InterfaceEx1 {
 
 	public static void main(String[] args) {
 //		Printerable.INK = 1000; 
 		System.out.println(Printerable.INK);
+		Complexer com = new Complexer();
+		System.out.println("기본잉크량 : " + Complexer.INK);
+		System.out.println("기본잉크량 : " + Complexerable.INK);
+		System.out.println("기본잉크량 : " + Printerable.INK);
+		System.out.println("팩스번호 : " + Complexer.FAX_NO);
+		System.out.println("팩스번호 : " + Complexerable.FAX_NO);
+		System.out.println("팩스번호 : " + Faxable.FAX_NO);
+		com.print();
+		com.scan();
+		com.receive("02-2222-3333");
+		com.send("02-3333-4444");
+		System.out.println("남은 잉크 : " + com.ink);
+		if(com instanceof Complexerable) {
+			System.out.println("c 객체는 Complexerable 객체임");
+			Complexerable c = com;
+			c.print();
+			c.scan();
+			c.receive("02-2222-3333");
+			c.send("02-2222-3333");
+//			System.out.println("남은잉크:" +c.ink);
+		}
+		if(com instanceof Printerable) {
+			System.out.println("p 객체는 Printerable 객체임");
+			Printerable p = com;
+			p.print();
+//			p.scan();
+//			p.receive("02-2222-3333");
+//			p.send("02-2222-3333");
+//			System.out.println("남은잉크:" +p.ink);
+		}
+		if(com instanceof Scannerable) {
+			System.out.println("s 객체는 Scannerable 객체임");
+			Scannerable s = com;
+//			s.print();
+			s.scan();
+//			s.receive("02-2222-3333");
+//			s.send("02-2222-3333");
+//			System.out.println("남은잉크:" +s.ink);
+		}
+		if(com instanceof Faxable) {
+			System.out.println("f 객체는 Faxable 객체임");
+			Faxable f = com;
+//			f.print();
+//			f.scan();
+			f.receive("02-2222-3333");
+			f.send("02-2222-3333");
+//			System.out.println("남은잉크:" +f.ink);
+		}
 	}
 
 }

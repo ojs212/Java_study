@@ -26,13 +26,11 @@ class SutdaDeck {
 	SutdaCard[] cards = new SutdaCard[20];
 	SutdaDeck() {
 		for(int i=0; i<cards.length; i++) {
-			if(i > 9) {
-				System.out.print(cards[i] = new SutdaCard((i % 10) + 1, false));
-			} else if(i == 0 || i == 2 || i == 7) {
-				System.out.print(cards[i] = new SutdaCard(i + 1, true));
+			if(i == 0 || i == 2 || i == 7) {
+				System.out.print(cards[i] = new SutdaCard((i % 10) + 1, true));
 			} else {
-				System.out.print(cards[i] = new SutdaCard(i + 1, false));
-			}
+				System.out.print(cards[i] = new SutdaCard((i % 10) + 1, false));
+			} 
 		}
 		
 	}
