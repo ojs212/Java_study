@@ -14,24 +14,20 @@ public class Test4 {
 		f = (x,y) -> x*y;
 		System.out.println("두수 (5,2)의 곱:" + calc(5,2,f));//10
 		int[] arr = {1,2,3,4,5,6,7,8,9,10};
-		int minIndex = arr[0];
-		int maxIndex = arr[0];
-		for(int i=0; i<arr.length; i++) {
-			if(maxIndex <= arr[i]) {
-				maxIndex = arr[i];
-			}
-			if(minIndex >= arr[i]) {
-				minIndex = arr[i];
-			}
-		}
-		System.out.println("arr 배열의 최대값:" + calc(maxIndex,f));//10
-		System.out.println("arr 배열의 최소값:" + calc(minIndex,f));//1
+		f = (x,y) -> (x>y)?x:y;
+		System.out.println("arr 배열의 최대값:" + calc(arr,f));//10
+		f = (x,y) -> (x<y)?x:y;
+		System.out.println("arr 배열의 최소값:" + calc(arr,f));//1
 	}
 	private static int calc(int x, int y, LambdaInterface3 f) {
 		return f.method(x, y);
 	}
-	private static int calc(int x, LambdaInterface3 f) {
-		return x;
+	private static int calc(int[] arr, LambdaInterface3 f) {
+		int result = arr[0];
+		for(int a : arr) {
+			result = f.method(result, a);
+		}
+		return result;
 	}
 	
 }

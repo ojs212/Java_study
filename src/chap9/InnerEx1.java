@@ -35,7 +35,7 @@ class Outer1 {
 		}
 		LocalInner lc = new LocalInner(); // 객체화
 		System.out.println("lc.iv=" + lc.iv); // 600
-		System.out.println("lc.cv=" + lc.cv); // 700
+//		System.out.println("lc.cv=" + lc.cv); // 700
 		System.out.println("LocalInner.cv=" + LocalInner.cv); // 700
 		System.out.println("LocalInner.MAX=" + LocalInner.MAX); // 800
 	}
