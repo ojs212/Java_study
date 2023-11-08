@@ -20,12 +20,12 @@ class Student {
 		return "[학번=" + studno + ", 이름=" + name + ", 전공=" + major + "]";
 	}
 	@Override
-	public boolean equals(Object obj) {
-		if(obj instanceof Student) {
-			Student s = (Student)obj;
-			return name == s.name && studno == s.studno;
+	public boolean equals(Object obj) { 
+		if(obj instanceof Student) { // obj 객체가 Student 객체임
+			Student s = (Student)obj; // Student 클래스의 멤버에 접근하기 위해 형변환
+			return name == s.name && studno == s.studno; 
 		} else {
-			return false;
+			return false; // Student 클래스의 객체가 아님
 		}
 	}
 }

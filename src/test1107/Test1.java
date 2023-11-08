@@ -25,12 +25,12 @@ public class Test1 {
 		int a = 0;
 		int cnt = 0;
 		while(true) {
-		try {
-			a = sc.nextInt();
-			cnt++;
-			if(a > 100 || a < 1) {
-				throw new Exception("숫자를 다시 입력해주세요");
-			}
+			try {
+				a = sc.nextInt();
+				cnt++;
+				if(a > 100 || a < 1) {
+					throw new Exception("숫자를 다시 입력해주세요");
+				}
 			} catch(InputMismatchException e) {
 				System.out.println("숫자만 입력하세요");
 				sc.next();
