@@ -1,0 +1,40 @@
+package test1109;
+/*
+ * format 메서드 구현하기
+ * 메서드명 : String format (String str,int len,int align)
+ * 기능 : 주어진 문자열을 지정된 크기의 문자열로 변환.
+ *        나머지 공간은 공백으로채운다.
+ *      (0 : 왼쪽 정렬, 1: 가운데 정렬, 2:오른쪽 정렬)     
+ [결과]
+ 가나다    
+  가나다  
+    가나다
+가나 
+ */
+public class Test1 {
+	public static void main(String[] args) {
+		String str = "가나다";
+		System.out.println(format(str, 7, 0));
+		System.out.println(format(str, 7, 1));
+		System.out.println(format(str, 7, 2));
+		System.out.println(format(str, 2, 0));
+	}
+	static String format(String s, int a, int b) {
+		String str = "";
+		String g = " ";
+		if(b == 0) {
+			str = (String.format("%-" + a +"s", s));
+		} else if (b == 2) {
+			str = (String.format("%"+ a + "s", s));
+		} else {
+			for(int i=0; i<a/2-1; i++) {
+				str += g;
+			}
+			str += s;
+		} 
+		if (s.length() > a) {
+			str = str.substring(0, a);
+		}
+		return str; 
+	}
+}
