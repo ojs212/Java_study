@@ -8,7 +8,7 @@ public class CalendarEx2 {
 	public static void main(String[] args) {
 		Calendar day = Calendar.getInstance();
 		day.set(2023, (11 - 1),10); // 월 : 0~11
-		System.out.printf("날짜:%d-%d-%d\n", 
+		System.out.printf("날짜:%d-%d-%d\n",
 				day.get(Calendar.YEAR), day.get(Calendar.MONTH)+1,day.get(Calendar.DATE));
 		// 2023-12-31 ?요일 출력하기
 		String w = " 일월화수목금토"; // 요일 : 1(일) ~ 7(토)
