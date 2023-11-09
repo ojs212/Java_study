@@ -21,7 +21,7 @@ public class Test4 {
 		a = Double.parseDouble(s);
 		return a;
 	}
-	static double truncate(double a, int b) {
+	static double truncate(double a, int b) { // indexof,substring 가능 / Math.pow 가능 
 		int[] arr = new int[b];
 		String s = "1";
 		for(int i=0; i<arr.length; i++) {

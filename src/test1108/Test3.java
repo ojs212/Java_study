@@ -16,9 +16,7 @@ public class Test3 {
 		String[] arr2 = s2.split(",");
 		for(int i=0; i<arr1.length; i++) {
 			arr1[i] += "=>" + arr2[i].trim();
-		}
-		for(String a : arr1) {
-			System.out.println(a);
+			System.out.println(arr1[i]);
 		}
 	}
 }
