@@ -28,7 +28,7 @@ public class Test3 {
 	}
 	static String fillZero(String s, int a) {
 		String st1 = "";
-		String st2 = "0";
+		String st2 = "-";
 		int cnt = 0;
 		if(a <= 0) {
 			s = "";

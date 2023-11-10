@@ -59,6 +59,7 @@ public class Exam8 {
 				System.out.println();
 			}
 		}
+		sc.close();
 	}
 
 }
