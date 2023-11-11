@@ -1,6 +1,7 @@
 package test1110;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /*
@@ -38,7 +39,8 @@ import java.util.List;
 김삿갓:국어(95),영어(85),수학(75),총점(255),평균(85.00)
 홍길동:국어(90),영어(80),수학(70),총점(240),평균(80.00)
  */
-class Student {
+class Student implements Comparable<Student> {
+
 	String na;
 	int ko;
 	int ma;
@@ -50,13 +52,16 @@ class Student {
 		this.en = en;
 	}
 	int getTotal() {
-		
-		return 0;
+		return ko + ma + en;
 	}
 	public String toString() {
-	
-		return na + ":국어(" + ko + "),영어(";
+		return String.format("%s:국어(%d),영어(%d),수학(%d),총점(%d),평균(%.2f)", na, ko, en, ma, getTotal(), (double)getTotal() / 3);
 	}
+	@Override
+	public int compareTo(Student o) {
+		return na.compareTo(o.na);
+	}
+	
 }
 public class Test3 {
 	public static void main(String[] args) {
@@ -65,6 +70,31 @@ public class Test3 {
 		list.add(new Student("김삿갓", 95, 85, 75));
 		list.add(new Student("이몽룡", 80, 95, 95));
 		list.add(new Student("임꺽정", 60, 75, 100));
-
+		
+		System.out.println("기본정렬방식 : 이름 오름차순으로 정렬");
+		Collections.sort(list);
+		for(Student a : list) {
+			System.out.println(a);
+		}
+		System.out.println("총점 기준 내림차순 정렬");
+		Collections.sort(list, (n1,n2) -> n2.getTotal() - n1.getTotal());
+		for(Student a : list) {
+			System.out.println(a);
+		}
+		System.out.println("국어 점수 내림차순 정렬");
+		Collections.sort(list, (n1,n2) -> n2.ko - n1.ko);
+		for(Student a : list) {
+			System.out.println(a);
+		}
+		System.out.println("영어 점수 내림차순 정렬");
+		Collections.sort(list, (n1,n2) -> n2.en - n1.en);
+		for(Student a : list) {
+			System.out.println(a);
+		}
+		System.out.println("수학 점수 내림차순 정렬");
+		Collections.sort(list, (n1,n2) -> n2.ma - n1.ma);
+		for(Student a : list) {
+			System.out.println(a);
+		}
 	}
 }
