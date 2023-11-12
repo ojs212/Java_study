@@ -1,13 +1,19 @@
 package alg;
-import java.util.Scanner;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class Main {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		String s = sc.nextLine();
-		s = s.trim();
-		String[] arr = s.split(" ");
-		System.out.println(arr.length);
-		sc.close();
+	public static void main(String[] args) throws IOException {
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		String s;
+		while((s = bf.readLine()) != null) {
+			bw.write(s + "\n");
+		}
+		bw.flush();
 	}
 }
