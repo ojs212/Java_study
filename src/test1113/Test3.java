@@ -1,4 +1,9 @@
 package test1113;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
 /*
 1.궁합음식의 키를 입력받아 해당되는 음식을 출력하기. 
   종료가 입력될때 까지 계속 출력하기
@@ -35,6 +40,30 @@ y
 */
 public class Test3 {
 	public static void main(String[] args) {
-
+		Map<String, String> foods = new HashMap<>();
+		Scanner sc = new Scanner(System.in);
+		foods.put("떡볶이", "오뎅");
+		foods.put("짜장면", "단무지");
+		while(true) {
+			System.out.println("음식명을 입력하세요(종료 : 종료)");
+			String s = sc.next();
+			if(s.equals("종료")) {
+				break;
+			} if(foods.get(s) == null) {
+				System.out.println(s + "의 궁합음식이 등록되어 있지 않습니다. 등록하시겠습니까?(Y)");
+				String s2 = sc.next();
+				if(s2.equalsIgnoreCase("y")) {
+					System.out.println(s + "의 궁합음식을 등록하세요");
+					String s3 = sc.next();
+					foods.put(s, s3);
+				} else {
+					continue;
+				}
+			} else {
+				System.out.println(foods.get(s));
+			}
+		}
+		System.out.println(foods);
+		sc.close();
 	}
 }

@@ -60,6 +60,7 @@ public class ListEx3 {
 		Collections.sort(list2,Comparator.reverseOrder()); 
 		System.out.println(list2);
 		System.out.println("Data2 객체 정렬하기");
+		
 		List<Data2> list3 = new ArrayList<>();
 		list3.add(new Data2(2)); list3.add(new Data2(3)); list3.add(new Data2(1));
 		Comparator<Data2> c = new Comparator<>() {
