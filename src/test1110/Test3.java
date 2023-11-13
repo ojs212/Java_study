@@ -2,6 +2,7 @@ package test1110;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /*
@@ -55,7 +56,8 @@ class Student implements Comparable<Student> {
 		return ko + ma + en;
 	}
 	public String toString() {
-		return String.format("%s:국어(%d),영어(%d),수학(%d),총점(%d),평균(%.2f)", na, ko, en, ma, getTotal(), (double)getTotal() / 3);
+		return String.format("%s:국어(%d),영어(%d),수학(%d),총점(%d),평균(%.2f)"
+				, na, ko, en, ma, getTotal(), (double)getTotal() / 3);
 	}
 	@Override
 	public int compareTo(Student o) {
@@ -92,7 +94,12 @@ public class Test3 {
 			System.out.println(a);
 		}
 		System.out.println("수학 점수 내림차순 정렬");
-		Collections.sort(list, (n1,n2) -> n2.ma - n1.ma);
+		Collections.sort(list, new Comparator<Student>() {
+			@Override
+			public int compare(Student o1, Student o2) {
+				return o2.ma - o1.ma;
+			}
+		});
 		for(Student a : list) {
 			System.out.println(a);
 		}

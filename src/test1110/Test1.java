@@ -31,7 +31,7 @@ public class Test1 {
 		System.out.println("찾고자 하는 번호를 입력하세요(종료:q)");
 		while(true) {
 			String s = sc.next();
-			if(s.equals("q")) {
+			if(s.equalsIgnoreCase("q")) {
 				break;
 			}
 			Pattern p = Pattern.compile(s);

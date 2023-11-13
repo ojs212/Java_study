@@ -1,6 +1,7 @@
 package test1110;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 /*
@@ -39,12 +40,16 @@ public class Test2 {
 		double center = 0;
 		System.out.println("자연수를 입력하세요 종료(0)");
 		while(true) {
+			try {
 			int n = sc.nextInt();
 			if(n == 0) {
 				break;
 			}
 			if(n % 2 != 0) {
 				list.add(n);
+			}
+			} catch(InputMismatchException e) {
+				sc.next();
 			}
 		}
 		for(Integer a : list) {
