@@ -24,7 +24,12 @@ public class Test2 {
 	  System.out.println("1부터 99까지의 숫자를 입력하세요 (종료 : 0)");
 	  int n;
 	  while(true) {
-		  n = sc.nextInt();
+		  try {
+			  n = sc.nextInt();
+		  } catch(Exception e) {
+			  sc.next();
+			  continue;
+		  }
 		  if(n == 0) {
 			  break;
 		  }

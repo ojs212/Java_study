@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Random;
+import java.util.Vector;
 
 /*
 다음 결과가 나오도록 프로그램을 작성하시오
@@ -42,7 +43,7 @@ public class Test1 {
 		List<Integer> draw = new ArrayList<>(set);
 		List<Integer> li3 = new ArrayList<>();
 		List<Integer> li2 = new ArrayList<>();
-		List<Integer> li1 = new ArrayList<>();
+		List<Integer> li1 = new Vector<>();
 		li3.add(draw.get(5));
 		li3.add(draw.get(4));
 		li3.add(draw.get(3));

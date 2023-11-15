@@ -44,12 +44,14 @@ public class Test3 {
 		Scanner sc = new Scanner(System.in);
 		foods.put("떡볶이", "오뎅");
 		foods.put("짜장면", "단무지");
+		foods.put("라면", "김치");
 		while(true) {
 			System.out.println("음식명을 입력하세요(종료 : 종료)");
 			String s = sc.next();
 			if(s.equals("종료")) {
 				break;
-			} if(foods.get(s) == null) {
+			} 
+			if(foods.get(s) == null) {
 				System.out.println(s + "의 궁합음식이 등록되어 있지 않습니다. 등록하시겠습니까?(Y)");
 				String s2 = sc.next();
 				if(s2.equalsIgnoreCase("y")) {
@@ -64,6 +66,9 @@ public class Test3 {
 			}
 		}
 		System.out.println(foods);
+		for(Map.Entry<String, String> s : foods.entrySet()) {
+			System.out.println(s.getKey() + "의 궁합음식 " + s.getValue());
+		}
 		sc.close();
 	}
 }
