@@ -19,19 +19,19 @@ CA FE BA BE 00 00 00 34 00 8E 07 00 02 01 00 17
 public class Test3 {
 	public static void main(String[] args) throws IOException {
 		FileInputStream fis = new FileInputStream("bin/chap14/InputStreamEx1.class");
-		int data = 0;
-/*
-		int cnt = 0;
-		while((data = fis.read()) != -1) {
-			System.out.print(String.format("%02X ", data));
-			cnt++;
-			if(cnt % 16 == 0) {
-				System.out.println();
-			}
-		}
-*/
+		int data;
+//
+//		int cnt = 0;
+//		while((data = fis.read()) != -1) {
+//			System.out.print(String.format("%02X ",fis.read()));
+//			cnt++;
+//			if(cnt % 16 == 0) {
+//				System.out.println();
+//			}
+//		}
+
 		byte[] buf = new byte[fis.available()];
-		while((data = fis.read(buf,0,buf.length)) != -1) {
+		while((data = fis.read(buf)) != -1) {
 			
 		} int i=0;
 		for(byte b : buf) {
@@ -41,6 +41,7 @@ public class Test3 {
 				System.out.println();
 			}
 		}
+		System.out.println(data);
 		fis.close();
 	}
 }

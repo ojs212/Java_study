@@ -17,16 +17,13 @@ public class Test2 {
 		String[] list = f.list();
 		FileInputStream fis; 
 		FileOutputStream fos; 
-		FileWriter fr; 
 		for(String a : list) {
 			if(a.contains(s2)) {
 				fis = new FileInputStream(s1 + a);
 				fos = new FileOutputStream("InputStream.txt", true);
-				fr = new FileWriter("InputStream.txt", true);
 				byte[] buf = new byte[fis.available()];
 				int data = 0;
-				fr.write("\n\n***************" + a + "***************\n\n");
-				fr.flush();
+				fos.write(("\n\n***************" + a + "***************\n\n").getBytes());
 				while((data = fis.read(buf)) != -1) {
 					fos.write(buf,0,data);
 					fos.flush();
