@@ -1,4 +1,5 @@
 package chap10;
+@SuppressWarnings("serial")
 /*
  * 사용자 예외 클래스 구현하기
  * 
@@ -10,6 +11,7 @@ class LoginFailException1 extends Exception {
 		super(msg);
 	}
 }
+@SuppressWarnings("serial")
 class LoginFailException2 extends RuntimeException {
 	LoginFailException2(String msg) {
 		super(msg);

@@ -8,11 +8,11 @@ class FinalMethod {
 		System.out.println("FinalMethod의 method");
 	}
 }
-//class SubMethod extends FinalMethod {
+class SubMethod extends FinalMethod {
 //	void method() {
 //		System.out.println("SubMethod의 method");
 //	}
-//}
+}
 public class FinalMethodEx {
 
 	public static void main(String[] args) {

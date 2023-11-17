@@ -24,7 +24,9 @@ public class WrapperEx1 {
 		Integer i1 = 100; // auto Boxing
 		Integer i2 = 100;
 		System.out.println("i1 == i2 :" + (i1 == i2));
+		@SuppressWarnings("removal")
 		Integer i3 = new Integer(100);
+		@SuppressWarnings("removal")
 		Integer i4 = new Integer(100);
 		System.out.println("i3 == i4 :" + (i3 == i4));
 		System.out.println("100 == i2 :" + (100 == i2)); // auto UnBoxing

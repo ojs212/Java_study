@@ -20,6 +20,7 @@ public class Exam7 {
 		Date d2 = sd.parse(s2);
 		long l = (d1.getTime() - d2.getTime()) / (1000*60*60*24);
 		System.out.println(Math.abs(l));
+		sc.close();
 	}
 
 }
